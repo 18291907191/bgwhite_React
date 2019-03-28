@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "axios": "^0.18.0",
+    "immutable": "^4.0.0-rc.12",
+    "moment": "^2.24.0",
+    "next": "^8.0.3",
+    "next-redux-saga": "^4.0.1",
+    "next-redux-wrapper": "^3.0.0-alpha.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
