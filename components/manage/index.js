@@ -1,9 +1,7 @@
-import Layout from '../../layouts/default'
-
 const Manage = (props) => (
-  <Layout>
+  <div>
     这里是关于登录后台的入口
-  </Layout>
+  </div>
 )
 
 export default Manage;

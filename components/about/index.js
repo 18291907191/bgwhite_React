@@ -1,7 +1,4 @@
-import Layout from '../../layouts/default'
-
 const About = () => (
-  <Layout>
     <div className="container">
       <article className="main">
         <h1>狗尾草的前端博客</h1>
@@ -68,7 +65,6 @@ const About = () => (
         }
       `}</style>
     </div>
-  </Layout>
 )
 
 export default About;

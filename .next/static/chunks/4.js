@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./components/home/aslideNotice.js":
-/*!*****************************************!*\
-  !*** ./components/home/aslideNotice.js ***!
-  \*****************************************/
+/***/ "./components/home/components/aslideNotice.js":
+/*!****************************************************!*\
+  !*** ./components/home/components/aslideNotice.js ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Volumes/BOOTCAMP/Next+React/components/home/aslideNotice.js";
+var _jsxFileName = "/Volumes/BOOTCAMP/Next+React/components/home/components/aslideNotice.js";
 
 
 /**
@@ -78,13 +78,13 @@ var AslideNotice = function AslideNotice(props) {
         lineNumber: 16
       },
       __self: this
-    }, item.cont)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    }, item.get('cont'))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
       },
       __self: this
-    }, item.createTime));
+    }, item.get('createTime')));
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", {
     __source: {
       fileName: _jsxFileName,

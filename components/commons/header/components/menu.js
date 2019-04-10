@@ -1,0 +1,73 @@
+import { connect } from 'react-redux';
+import Link from 'next/link'
+import * as actionCreators from '../store/actionCreators'
+
+const Menu = ({ navList,focused,handleNav }) => (
+  <nav>
+    {
+      navList.map((item,index) => (
+        <Link prefetch key={+new Date() + index} href={item.url}>
+          <a 
+            target={item.name=='GitHub'?'_blank':''}
+            className={focused==index?'focused':''}
+            onClick={() => (handleNav(index))}
+          >
+            {item.name}
+          </a>
+        </Link>
+      ))
+    }
+    <style jsx>{`
+      a {
+        color: #333333;
+        text-shadow: 0px 0px 2px #ffffff;
+        padding: 10px 10px;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 0;
+        height: 100%;
+        border-bottom: 2px solid #45BCF9;
+        transition: .2s all linear;
+      }
+      a:hover {
+        color: #ffffff;
+        text-shadow: 0px 0px 2px #45BCF9;
+      }
+      a:hover::before {
+        width: 100%;
+        left: 0;
+      }
+      a:hover ~ a::before {
+        left: 0;
+      }
+      .focused {
+        text-shadow: 0px 0px 2px #45BCF9;
+        border-bottom: 2px solid #45BCF9;
+        color: #ffffff;
+      }
+    `}</style>
+  </nav>
+)
+
+const mapStateToProps = (state) => {
+  return {
+    navList: state.header.get('navList'),
+    focused: state.header.get('focused')
+  }
+}
+
+const mapDispathToProps = (dispatch) => {
+  return {
+    handleNav(index) {
+      sessionStorage.setItem('navIndex',index);
+      dispatch(actionCreators.selectNavItemAction(index));
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispathToProps)(Menu);

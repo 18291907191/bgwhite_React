@@ -4,20 +4,29 @@ import React, { Fragment } from 'react'
 import { RouterTitle } from '../constans/ConstTypes';
 import { Provider } from 'react-redux';
 import store from '../store';
+import Layout from '../layouts/default';
+import Axios from 'axios';
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
     let pageProps = {}
+    const navList = await Axios.get('http://localhost:3002/nav_list')
+    .then(res => {
+      return res.data.result
+    },err => {
+      new Error(err);
+    })
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
+    console.log('24',navList);
+    return {pageProps,navList}
 
-    return {pageProps}
   }
 
   render () {
-    const {Component, pageProps,router} = this.props
+    const {Component, pageProps,router,navList} = this.props
     return (
       <Fragment>
         <Head>
@@ -26,11 +35,21 @@ export default class MyApp extends App {
           <title>{RouterTitle[router.pathname]}</title>
           <link rel='shortcut icon' href='/static/favicon.ico' type='image/ico'/>
         </Head>
-        <Provider store={store}>
-          <Container>
-            <Component {...pageProps} router={router} />
-          </Container>
-        </Provider>
+
+        <Container>
+
+          <Provider store={store}>
+
+            <Layout navList={navList}>
+
+              <Component {...pageProps} router={router} />
+
+            </Layout>
+
+          </Provider>
+
+        </Container>
+
         <style jsx global>{`
           html, body, div, span, applet, object, iframe,
           h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -55,7 +74,6 @@ export default class MyApp extends App {
           /* HTML5 display-role reset for older browsers */
           html,body,#root {
             height: 100%;
-            overflow: hidden;
           }
           a {
             text-decoration: none;
@@ -85,18 +103,15 @@ export default class MyApp extends App {
           }
           #__next {
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hiden;
           }
           @font-face {
             font-family: 'iconfont';  /* project id 1112247 */
-            src: url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.eot');
-            src: url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.woff2') format('woff2'),
-            url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.woff') format('woff'),
-            url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_1112247_h7ke7ck9qaf.svg#iconfont') format('svg');
+            src: url('//at.alicdn.com/t/font_1112247_72wayeberjl.eot');
+            src: url('//at.alicdn.com/t/font_1112247_72wayeberjl.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_1112247_72wayeberjl.woff2') format('woff2'),
+            url('//at.alicdn.com/t/font_1112247_72wayeberjl.woff') format('woff'),
+            url('//at.alicdn.com/t/font_1112247_72wayeberjl.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_1112247_72wayeberjl.svg#iconfont') format('svg');
           }
           .iconfont {
             font-family: "iconfont" !important;

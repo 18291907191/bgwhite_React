@@ -1,112 +1,65 @@
 exports.ids = [2];
 exports.modules = {
 
-/***/ "./components/home/aslideNotice.js":
-/*!*****************************************!*\
-  !*** ./components/home/aslideNotice.js ***!
-  \*****************************************/
+/***/ "./components/commons/header/components/logo.js":
+/*!******************************************************!*\
+  !*** ./components/commons/header/components/logo.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Volumes/BOOTCAMP/Next+React/components/home/aslideNotice.js";
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Volumes/BOOTCAMP/Next+React/components/commons/header/components/logo.js";
 
 
-/**
- * @description 侧边栏 网站公告
- * @param {*} data
- * @return {Object} Dom 
- */
 
-var AslideNotice = function AslideNotice(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "aslide-model",
+
+var Logo = function Logo() {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "jsx-3805944463",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 5
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "hd",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 6
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532412479772&di=054181aa27a78980933091e0fd338d3f&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201409%2F21%2F20140921125932_2mAvm.thumb.700_0.jpeg",
+    alt: "",
+    title: "\u72D7\u5C3E\u8349\u7684\u524D\u7AEF\u535A\u5BA2",
+    className: "jsx-3805944463",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 7
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "iconfont",
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "jsx-3805944463",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 13
     },
     __self: this
-  }, "\uE611\xA0\xA0"), "\u7F51\u7AD9\u516C\u544A")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "aslide-model-cont",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
+  }, "\u72D7\u5C3E\u8349\u7684\u524D\u7AEF\u535A\u5BA2"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3805944463",
     __self: this
-  }, props.noticeList.map(function (item, index) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: +new Date() + index,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }, item.cont)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, item.createTime));
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, "\n      .aslide-model {\n        border: 1px solid #eaeaea;\n        min-height: 160px;\n        _height: 160px;\n        margin-bottom: 20px;\n        transition: .5s;\n      }\n      .aslide-model:hover {\n        box-shadow: 0 0 10px #ccc;\n        transform: transLateY(-5px);\n      }\n      .aslide-model .hd {\n        height: 30px;\n        line-height: 30px;\n        border-bottom: 1px solid #eaeaea;\n        background-color: #fbfbfb;\n      }\n      .aslide-model .hd span {\n        display: inline-block;\n        height: 100%;\n        padding: 0 20px 0 10px;\n        background-color: #ffffff;\n        border-right: 1px solid #eaeaea;\n        border-bottom: 1px solid #ffffff;\n      }\n      .aslide-model-cont {\n        padding: 5px 10px;\n      }\n      .aslide-model-cont li {\n        font-size: 14px;\n        display: flex;\n        justify-content: space-between;\n        align-item: center;\n        line-height: 30px;\n      }\n      .aslide-model-cont li a:hover {\n        color: #45BCF9;\n      }\n      .aslide-model-cont li a {\n        color: #333333;\n        display: block;\n        width: 280px;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        text-shadow: 0px 0px 2px #ffffff;\n      }\n      .aslide-model-cont li span {\n        float: right;\n      }\n    "));
+  }, "div.jsx-3805944463{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}img.jsx-3805944463{width:90px;height:90px;border-radius:100%;margin-right:20px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Wb2x1bWVzL0JPT1RDQU1QL05leHQrUmVhY3QvY29tcG9uZW50cy9jb21tb25zL2hlYWRlci9jb21wb25lbnRzL2xvZ28uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBYWdCLEFBR3NCLEFBSUYsV0FDQyxZQUNPLG1CQUNELGtCQUNwQixjQVBxQiw2RkFDckIiLCJmaWxlIjoiL1ZvbHVtZXMvQk9PVENBTVAvTmV4dCtSZWFjdC9jb21wb25lbnRzL2NvbW1vbnMvaGVhZGVyL2NvbXBvbmVudHMvbG9nby5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcblxuY29uc3QgTG9nbyA9ICgpID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgIDxMaW5rIGhyZWY9Jy8nPlxuICAgICAgPGltZyBcbiAgICAgICAgc3JjPVwiaHR0cHM6Ly90aW1nc2EuYmFpZHUuY29tL3RpbWc/aW1hZ2UmcXVhbGl0eT04MCZzaXplPWI5OTk5XzEwMDAwJnNlYz0xNTMyNDEyNDc5NzcyJmRpPTA1NDE4MWFhMjdhNzg5ODA5MzMwOTFlMGZkMzM4ZDNmJmltZ3R5cGU9MCZzcmM9aHR0cCUzQSUyRiUyRmltZzUuZHVpdGFuZy5jb20lMkZ1cGxvYWRzJTJGaXRlbSUyRjIwMTQwOSUyRjIxJTJGMjAxNDA5MjExMjU5MzJfMm1Bdm0udGh1bWIuNzAwXzAuanBlZ1wiXG4gICAgICAgIGFsdD1cIlwiXG4gICAgICAgIHRpdGxlPVwi54uX5bC+6I2J55qE5YmN56uv5Y2a5a6iXCIgXG4gICAgICAvPlxuICAgIDwvTGluaz5cbiAgICA8aDM+54uX5bC+6I2J55qE5YmN56uv5Y2a5a6iPC9oMz5cbiAgICA8c3R5bGUganN4PntgXG4gICAgICBkaXYge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgfVxuICAgICAgaW1nIHtcbiAgICAgICAgd2lkdGg6IDkwcHg7XG4gICAgICAgIGhlaWdodDogOTBweDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xuICAgICAgfVxuICAgIGB9PC9zdHlsZT5cbiAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTG9nbzsiXX0= */\n/*@ sourceURL=/Volumes/BOOTCAMP/Next+React/components/commons/header/components/logo.js */"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (AslideNotice);
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
+/* harmony default export */ __webpack_exports__["default"] = (Logo);
 
 /***/ }),
 

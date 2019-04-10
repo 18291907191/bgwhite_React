@@ -1,8 +1,27 @@
-import HeaderUI from './indexUI';
+import HeaderUI from './components/indexUI';
+import { connect } from 'react-redux';
+import { Component } from 'react';
+import * as actionCreators from './store/actionCreators'
 
-const Header = (props) => (
-  <HeaderUI />
-)
+class Header extends Component {
+  render() {
+    return (
+      <HeaderUI />
+    )
+  }
+  componentDidMount() {
+    this.props.initNavList(this.props.navList);
+  }
+}
 
-export default Header;
+const mapDispathToProps = (dispatch) => {
+  return {
+    initNavList(data) {
+      sessionStorage.setItem('navList',JSON.stringify(data))
+      dispatch(actionCreators.initNavListAction(data));
+    },
+  }
+}
+
+export default connect(null,mapDispathToProps)(Header);
 

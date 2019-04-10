@@ -91,9 +91,6 @@ const Footer = () => {
         transform: translateY(-5px);
         box-shadow: 0px 3px 0px 0px #3576e0;
       }
-      ul a:hover img {
-        transform: rotate(360deg);
-      }
       ul a img {
         width: 45px;
         height: 45px;
