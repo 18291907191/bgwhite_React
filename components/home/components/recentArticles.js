@@ -6,7 +6,7 @@ import Link from 'next/link';
  */
 const RecentArticles = (props) => (
   <div className="aslide-recent-articles">
-    <h3 className="hd"><span>推荐文章</span></h3>
+    <h3 className="hd"><span><i className="iconfont">&#xe610;&nbsp;&nbsp;</i>推荐文章</span></h3>
     <ul className="recent-articles-cont">
       {
         props.recentArticlesList.map((item,index) => {

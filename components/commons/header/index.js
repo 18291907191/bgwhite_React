@@ -18,7 +18,9 @@ const mapDispathToProps = (dispatch) => {
   return {
     initNavList(data) {
       sessionStorage.setItem('navList',JSON.stringify(data))
+      let navIndex = sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0;
       dispatch(actionCreators.initNavListAction(data));
+      dispatch(actionCreators.selectNavItemAction(navIndex));
     },
   }
 }

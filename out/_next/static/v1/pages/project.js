@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{b6cx:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/project",function(){var n=e("mI7R");return{page:n.default||n}}])},mI7R:function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),c=e.n(o);t.default=function(){return c.a.createElement("div",null,"This is the content about My Project")}}},[["b6cx",1,0]]]);

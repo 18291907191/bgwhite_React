@@ -7,13 +7,19 @@ const ArticleList = ({articleList}) => (
         articleList.map((item,index) => (
           <li key={+new Date() + index} className={articleList.toJS().length==1?'bot':''}>
             <i className="iconfont recent">&#xe673;</i>
-            <a href="/" className="img-hd">
-              <img src={item.get('imgHd')} />
-            </a>
+            <Link href={`/detail/?id=${index}`} as={`/detail/${index}`}>
+              <a  className="img-hd">
+                <img src={item.get('imgHd')} />
+              </a>
+            </Link>
             <div className="cont">
               <header>
-                <a className="tag" href="/">{item.get('tag')}</a>
-                <a className="tit" href="/">{item.get('title')}</a>
+                <Link href={`/detail?id=${index}`} as={`/detail/${index}`}>
+                  <a className="tag" >{item.get('tag')}</a>
+                </Link>
+                <Link href={`/detail?id=${index}`} as={`/detail/${index}`}>
+                  <a className="tit" >{item.get('title')}</a>
+                </Link>
               </header>
               <p className="meta">
                 <span>{item.get('createTime')}</span>

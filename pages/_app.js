@@ -4,25 +4,22 @@ import React, { Fragment } from 'react'
 import { RouterTitle } from '../constans/ConstTypes';
 import { Provider } from 'react-redux';
 import store from '../store';
-import Layout from '../layouts/default';
+import Layout from '../components/commons/layout/default';
 import Axios from 'axios';
 
 export default class MyApp extends App {
-  static async getInitialProps ({ Component, router, ctx }) {
+  static async getInitialProps ({ Component, ctx }) {
     let pageProps = {}
     const navList = await Axios.get('http://localhost:3002/nav_list')
     .then(res => {
       return res.data.result
     },err => {
-      new Error(err);
+      throw new Error(err);
     })
-
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
-    console.log('24',navList);
     return {pageProps,navList}
-
   }
 
   render () {
@@ -106,12 +103,12 @@ export default class MyApp extends App {
           }
           @font-face {
             font-family: 'iconfont';  /* project id 1112247 */
-            src: url('//at.alicdn.com/t/font_1112247_72wayeberjl.eot');
-            src: url('//at.alicdn.com/t/font_1112247_72wayeberjl.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_1112247_72wayeberjl.woff2') format('woff2'),
-            url('//at.alicdn.com/t/font_1112247_72wayeberjl.woff') format('woff'),
-            url('//at.alicdn.com/t/font_1112247_72wayeberjl.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_1112247_72wayeberjl.svg#iconfont') format('svg');
+            src: url('//at.alicdn.com/t/font_1112247_aprz252dcgn.eot');
+            src: url('//at.alicdn.com/t/font_1112247_aprz252dcgn.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.woff2') format('woff2'),
+            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.woff') format('woff'),
+            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.svg#iconfont') format('svg');
           }
           .iconfont {
             font-family: "iconfont" !important;

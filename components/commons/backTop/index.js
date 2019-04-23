@@ -10,7 +10,11 @@ class BackTop extends PureComponent {
   componentDidMount() {
     window.addEventListener('scroll',this.isShow);
   }
-
+  componentWillUnmount() {
+    this.setState = (state,callback) => {
+      return ;
+    }
+  }
   // 点击图片回到顶部方法，加计时器是为了过渡顺滑
   backTop () {
     let that = this
@@ -45,7 +49,7 @@ class BackTop extends PureComponent {
         .backtop {
           position: fixed;
           right: 50px;
-          bottom: 30px;
+          bottom: 50px;
           transition: .5s;
           transform: transLateY(100px);
           padding: 0px 10px ;

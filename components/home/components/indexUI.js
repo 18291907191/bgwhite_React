@@ -1,4 +1,3 @@
-import Layout from '../../../layouts/default'
 import dynamic from 'next/dynamic';
 import { Fragment} from 'react';
 
