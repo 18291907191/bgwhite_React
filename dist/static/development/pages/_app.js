@@ -257,13 +257,13 @@ var defaultState = Object(immutable__WEBPACK_IMPORTED_MODULE_0__["fromJS"])({
   swiperList: [{
     city: 'Vue.js',
     country: 'Vue project',
-    img: '/static/bg1.jpg'
+    img: 'http://static.bgwhite.cn/bg3.jpg'
   }, {
     city: 'React.js',
-    img: '/static/bg2.jpg'
+    img: 'http://static.bgwhite.cn/bg1.jpg'
   }, {
     city: 'Node.js',
-    img: '/static/bg3.jpg'
+    img: 'http://static.bgwhite.cn/bg2.jpg'
   }],
   focused: true,
   noticeList: [{
@@ -402,6 +402,7 @@ __webpack_require__.r(__webpack_exports__);
 var RouterTitle = {
   '/': '狗尾草的前端博客',
   '/about': '关于狗尾草',
+  '/detail': '文章详情',
   '/project': '狗尾草的项目经验',
   '/manage': '狗尾草网站管理'
 };

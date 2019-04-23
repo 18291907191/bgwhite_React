@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{"+25D":function(e,n,t){"use strict";t.r(n);var c=t("q1tI"),o=t.n(c),a=t("/MKj");n.default=Object(a.b)(function(e){return{goodSentences:e.header.get("goodSentences")}},null)(function(e){return o.a.createElement("div",{className:"text-center"},o.a.createElement("marquee",{behavior:"slide"},e.goodSentences))})}}]);

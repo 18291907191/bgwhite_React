@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{bpTB:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/manage",function(){var n=t("sO6m");return{page:n.default||n}}])},sO6m:function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u),i=function(n){return a.a.createElement("div",null,"这里是关于登录后台的入口")};e.default=i}},[["bpTB",1,0]]]);

@@ -6,15 +6,15 @@ const defaultState = fromJS({
     {
       city: 'Vue.js',
       country: 'Vue project',
-      img: '/static/bg1.jpg',
+      img: 'http://static.bgwhite.cn/bg3.jpg',
     },
     {
       city: 'React.js',
-      img: '/static/bg2.jpg',
+      img: 'http://static.bgwhite.cn/bg1.jpg',
     },
     {
       city: 'Node.js',
-      img: '/static/bg3.jpg',
+      img: 'http://static.bgwhite.cn/bg2.jpg',
     }
   ],
   focused: true,

@@ -16,7 +16,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_server_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-server/dynamic */ "next-server/dynamic");
 /* harmony import */ var next_server_dynamic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_server_dynamic__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Volumes/BOOTCAMP/Next+React/components/commons/header/components/indexUI.js";
 
 
 
@@ -34,37 +33,16 @@ var HeaderUI = next_server_dynamic__WEBPACK_IMPORTED_MODULE_2___default()({
         Menu = _ref.Menu,
         MarQuee = _ref.MarQuee;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
-      className: "jsx-878331279",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
+      className: "jsx-306674054"
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Logo, {
-      className: "jsx-878331279",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
+      className: "jsx-306674054"
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MarQuee, {
-      className: "jsx-878331279",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
+      className: "jsx-306674054"
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Menu, {
-      className: "jsx-878331279",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
+      className: "jsx-306674054"
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-      id: "878331279",
-      __self: this
-    }, "header.jsx-878331279{padding:20px 20px;background:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552887564432&di=934760de81d9f22a78df1267f428faec&imgtype=0&src=http%3A%2F%2Fpic15.nipic.com%2F20110715%2F7943290_155206295348_2.jpg') no-repeat center;background-size:cover;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Wb2x1bWVzL0JPT1RDQU1QL05leHQrUmVhY3QvY29tcG9uZW50cy9jb21tb25zL2hlYWRlci9jb21wb25lbnRzL2luZGV4VUkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0JrQixBQUc2QixrQkFDME4sNE9BQ3ROLHNCQUNULDBFQUNpQixtSEFDWCw2RkFDckIiLCJmaWxlIjoiL1ZvbHVtZXMvQk9PVENBTVAvTmV4dCtSZWFjdC9jb21wb25lbnRzL2NvbW1vbnMvaGVhZGVyL2NvbXBvbmVudHMvaW5kZXhVSS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBkeW5hbWljIGZyb20gJ25leHQvZHluYW1pYyc7XG5cbmNvbnN0IEhlYWRlclVJID0gZHluYW1pYyh7XG4gIG1vZHVsZXM6ICgpID0+IHtcbiAgICBjb25zdCBjb21wb25lbnRzID0ge1xuICAgICAgTG9nbzogaW1wb3J0KCcuL2xvZ28nKSxcbiAgICAgIE1lbnU6IGltcG9ydCgnLi9tZW51JyksXG4gICAgICBNYXJRdWVlOiBpbXBvcnQoJy4vbWFycXVlZScpXG4gICAgfVxuICAgIHJldHVybiBjb21wb25lbnRzXG4gIH0sXG4gIHJlbmRlcjogKHByb3BzLHtMb2dvLE1lbnUsTWFyUXVlZX0pID0+IFxuICAgIDxoZWFkZXI+XG4gICAgICA8TG9nbyAvPlxuICAgICAgPE1hclF1ZWUgLz5cbiAgICAgIDxNZW51IC8+XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGhlYWRlciB7XG4gICAgICAgICAgcGFkZGluZzogMjBweCAyMHB4O1xuICAgICAgICAgIGJhY2tncm91bmQ6IHVybCgnaHR0cHM6Ly90aW1nc2EuYmFpZHUuY29tL3RpbWc/aW1hZ2UmcXVhbGl0eT04MCZzaXplPWI5OTk5XzEwMDAwJnNlYz0xNTUyODg3NTY0NDMyJmRpPTkzNDc2MGRlODFkOWYyMmE3OGRmMTI2N2Y0MjhmYWVjJmltZ3R5cGU9MCZzcmM9aHR0cCUzQSUyRiUyRnBpYzE1Lm5pcGljLmNvbSUyRjIwMTEwNzE1JTJGNzk0MzI5MF8xNTUyMDYyOTUzNDhfMi5qcGcnKSBuby1yZXBlYXQgY2VudGVyO1xuICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvaGVhZGVyPlxufSlcblxuZXhwb3J0IGRlZmF1bHQgSGVhZGVyVUk7Il19 */\n/*@ sourceURL=/Volumes/BOOTCAMP/Next+React/components/commons/header/components/indexUI.js */"));
+      id: "306674054"
+    }, "header.jsx-306674054{padding:20px 20px;background:url('http://static.bgwhite.cn/timg.jpeg') no-repeat center;background-size:cover;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Wb2x1bWVzL0JPT1RDQU1QL05leHQrUmVhY3QvY29tcG9uZW50cy9jb21tb25zL2hlYWRlci9jb21wb25lbnRzL2luZGV4VUkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0JrQixBQUc2QixrQkFDb0Qsc0VBQ2hELHNCQUNULDBFQUNpQixtSEFDWCw2RkFDckIiLCJmaWxlIjoiL1ZvbHVtZXMvQk9PVENBTVAvTmV4dCtSZWFjdC9jb21wb25lbnRzL2NvbW1vbnMvaGVhZGVyL2NvbXBvbmVudHMvaW5kZXhVSS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBkeW5hbWljIGZyb20gJ25leHQvZHluYW1pYyc7XG5cbmNvbnN0IEhlYWRlclVJID0gZHluYW1pYyh7XG4gIG1vZHVsZXM6ICgpID0+IHtcbiAgICBjb25zdCBjb21wb25lbnRzID0ge1xuICAgICAgTG9nbzogaW1wb3J0KCcuL2xvZ28nKSxcbiAgICAgIE1lbnU6IGltcG9ydCgnLi9tZW51JyksXG4gICAgICBNYXJRdWVlOiBpbXBvcnQoJy4vbWFycXVlZScpXG4gICAgfVxuICAgIHJldHVybiBjb21wb25lbnRzXG4gIH0sXG4gIHJlbmRlcjogKHByb3BzLHtMb2dvLE1lbnUsTWFyUXVlZX0pID0+IFxuICAgIDxoZWFkZXI+XG4gICAgICA8TG9nbyAvPlxuICAgICAgPE1hclF1ZWUgLz5cbiAgICAgIDxNZW51IC8+XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGhlYWRlciB7XG4gICAgICAgICAgcGFkZGluZzogMjBweCAyMHB4O1xuICAgICAgICAgIGJhY2tncm91bmQ6IHVybCgnaHR0cDovL3N0YXRpYy5iZ3doaXRlLmNuL3RpbWcuanBlZycpIG5vLXJlcGVhdCBjZW50ZXI7XG4gICAgICAgICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9oZWFkZXI+XG59KVxuXG5leHBvcnQgZGVmYXVsdCBIZWFkZXJVSTsiXX0= */\n/*@ sourceURL=/Volumes/BOOTCAMP/Next+React/components/commons/header/components/indexUI.js */"));
   },
   loadableGenerated: {
     webpack: function webpack() {

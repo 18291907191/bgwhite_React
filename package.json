@@ -19,5 +19,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "export": "yarn run build && next export"
-  }
+  },
+  "version": "2",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }

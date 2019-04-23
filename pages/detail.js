@@ -1,8 +1,12 @@
 import React , { PureComponent } from 'react';
 
 class Detail extends PureComponent {
+  // static async getInitialProps() {
+  //   console.log('aaa');
+  // }
   constructor(props) {
     super(props);
+    console.log(props.router);
     const { id } = props.router.query;
     this.state = {
       articleId: id
