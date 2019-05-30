@@ -2,21 +2,15 @@ import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import HomeUI from './components/indexUI';
 import * as actionCreators from './store/actionCreators'
-import Axios from 'axios';
+import { getRequest } from '../../utils/http';
 
 class Home extends PureComponent {
-  // static async getInitialProps() {
-  //   const navList = Axios.get('http://localhost:3002/nav_list')
-  //   .then(res => {
-  //     console.log('11',res.data.result);
-  //     return { navList: res.data.result }
-  //   },err => {
-  //     new Error(err);
-  //   })
-  //   return navList;
-  // }
+  static async getInitialProps() {
+    const articleList = await getArticleList();
+    return { articleList }
+  }
   render() {
-    const { swiperList,noticeList,recentArticlesList,aslideIsFixed,articleList } = this.props;
+    const { swiperList,noticeList,recentArticlesList,aslideIsFixed,articleList} = this.props;
     return (
       <HomeUI
         swiperList={swiperList}
@@ -32,13 +26,21 @@ class Home extends PureComponent {
   }
 }
 
+const getArticleList = async(data) => {
+  try {
+    const {data:{ result }} = await getRequest('http://localhost:3002/article/api/v1/article_list');
+    return result;
+  } catch(err) {
+    return err.message;
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
     swiperList: state.home.get('swiperList').toJS(),
     noticeList: state.home.get('noticeList'),
     recentArticlesList: state.home.get('recentArticlesList'),
     aslideIsFixed: state.home.get('aslideFixed'),
-    articleList: state.home.get('articleList')
   }
 }
 

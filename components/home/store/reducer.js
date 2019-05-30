@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable'; 
-import { ASLIDE_FIXED } from './actionTypes'
+import { ASLIDE_FIXED,ARTICLE_LIST } from './actionTypes'
 
 const defaultState = fromJS({
   swiperList: [
@@ -31,98 +31,7 @@ const defaultState = fromJS({
     {title:"小程序引入多个e-Charts图标"},
   ],
   aslideFixed: false,
-  articleList: [
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    },
-    {
-      imgHd: 'https://100phone.cn/wp-content/uploads/2019/03/14501821401-220x150.png',
-      tag: 'Node.js',
-      title: '程序员高效率开发',
-      createTime: '2019-03-15',
-      readNumber: '25',
-      commentNumber: '0',
-      praise: '999',
-      desc: '-Reducers负责通过store做哪些更新，-Sagas负责协调那些复杂或起步的操作。1.redux-sage dispatch>redux-saga的action类型不能和sage提交到reducer的动作类型一样否则就会报错'
-    }
-  ]
+  articleList: []
 })
 
 // reducer 可以接受state，但是绝不能修改state
@@ -130,6 +39,10 @@ export default (state = defaultState,action) => {
   switch(action.type) {
     case ASLIDE_FIXED:
     return state.set('aslideFixed',action.data);
+    case ARTICLE_LIST:
+    console.log('134',action.data);
+    return state.set('articleList',fromJS(action.data));
+    // return state.set('articleList',action.data);
     default: 
     return state;
   }

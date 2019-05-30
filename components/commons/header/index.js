@@ -10,20 +10,19 @@ class Header extends Component {
     )
   }
   componentDidMount() {
-    this.props.initNavList(this.props.navList);
+    this.props.initNavList();
   }
 }
 
 const mapDispathToProps = (dispatch) => {
   return {
-    initNavList(data) {
-      sessionStorage.setItem('navList',JSON.stringify(data))
+    initNavList() {
       let navIndex = sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0;
-      dispatch(actionCreators.initNavListAction(data));
       dispatch(actionCreators.selectNavItemAction(navIndex));
     },
   }
 }
+
 
 export default connect(null,mapDispathToProps)(Header);
 

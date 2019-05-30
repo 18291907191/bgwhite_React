@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Fragment,Component } from 'react';
+import "antd/dist/antd.css";
 
 const Header = dynamic(import('../header'),{
   loading: () => <p>正在加载组件...</p>
@@ -18,8 +19,8 @@ class Layout extends Component {
      return (
         <Fragment>
 
-        <Header navList={navList} />
-        
+        {/* <Header navList={navList} /> */}
+        <Header />
         { children }
     
         <Footer />

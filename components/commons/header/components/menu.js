@@ -5,7 +5,7 @@ import * as actionCreators from '../store/actionCreators'
 const Menu = ({ navList,focused,handleNav }) => (
   <nav>
     {
-      navList.map((item,index) => (
+      navList.toJS().map((item,index) => (
         <Link prefetch key={+new Date() + index} href={item.url}>
           <a 
             target={item.name=='GitHub'?'_blank':''}
@@ -31,6 +31,7 @@ const Menu = ({ navList,focused,handleNav }) => (
         left: 100%;
         width: 0;
         height: 100%;
+        box-sizing: border-box;
         border-bottom: 2px solid #45BCF9;
         transition: .2s all linear;
       }
@@ -47,8 +48,21 @@ const Menu = ({ navList,focused,handleNav }) => (
       }
       .focused {
         text-shadow: 0px 0px 2px #45BCF9;
-        border-bottom: 2px solid #45BCF9;
         color: #ffffff;
+      }
+      .focused::before {
+        border-bottom: 0;
+      }
+      .focused::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border-bottom: 2px solid #45BCF9;
+        transition: .2s all linear;
       }
     `}</style>
   </nav>

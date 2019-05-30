@@ -9,13 +9,13 @@ const HomeUI = dynamic({
       AslideNotice: import('./aslideNotice'),
       RecentArticles: import('./recentArticles'),
       MusicPlay: import('./musicPlay'),
-      ArticleList: import('./articleList')
+      ArticleList: import('./articleList'),
     }
     return components;
   },
   render: (
     {swiperList,articleList,aslideFixed,noticeList,recentArticlesList},
-    {BackTop,Swiper,AslideNotice,RecentArticles,MusicPlay,ArticleList}) => 
+    {Swiper,ArticleList,AslideNotice,RecentArticles,MusicPlay,BackTop}) => 
     <Fragment>
       <div className="container">
         <div className="article">
@@ -23,7 +23,7 @@ const HomeUI = dynamic({
             <Swiper slides={swiperList} />
           </div> 
           <h3 className="hd">最新发布</h3>
-          <ArticleList articleList={articleList} />
+          <ArticleList articleList={articleList}/>
         </div>
         <div className={[`aslide ${aslideFixed?'fixed':''}`]}>
           <AslideNotice noticeList={noticeList} />

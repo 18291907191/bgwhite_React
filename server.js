@@ -1,6 +1,7 @@
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
+const childProcess = require('child_process')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -22,5 +23,15 @@ app.prepare().then(() => {
   }).listen(3000, err => {
     if (err) throw err
     console.log('> Ready on http://localhost:3000')
+    //传入url
+    if (process.platform === 'wind32') {
+      cmd = 'start "%ProgramFiles% Internet Explorer iexplore.exe"'
+    } else if (process.platform === 'linux') {
+      cmd = 'xdg-open'
+    } else if (process.platform === 'darwin') {
+      cmd = 'open'
+    }
+
+    childProcess.exec(`${cmd} "http://localhost:3000"`);
   })
 })

@@ -7,23 +7,18 @@ import store from '../store';
 import Layout from '../components/commons/layout/default';
 import Axios from 'axios';
 
-export default class MyApp extends App {
-  static async getInitialProps ({ Component, ctx }) {
-    let pageProps = {}
-    const navList = await Axios.get('http://localhost:3002/nav_list')
-    .then(res => {
-      return res.data.result
-    },err => {
-      throw new Error(err);
-    })
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-    return {pageProps,navList}
-  }
 
+class MyApp extends App {
+  static async getInitialProps ({ Component, ctx }) {
+
+    // const navList = await getNavList();
+    
+    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+    return {pageProps:{...pageProps}}
+
+  }
   render () {
-    const {Component, pageProps,router,navList} = this.props
+    const {Component, pageProps,router} = this.props
     return (
       <Fragment>
         <Head>
@@ -37,7 +32,7 @@ export default class MyApp extends App {
 
           <Provider store={store}>
 
-            <Layout navList={navList}>
+            <Layout>
 
               <Component {...pageProps} router={router} />
 
@@ -121,4 +116,32 @@ export default class MyApp extends App {
       </Fragment>
     )
   }
+  componentDidMount() {
+    createScript();
+  }
 }
+//创建script节点
+const createScript = () => {
+  const handleLove = document.createElement('script');
+  handleLove.type = 'text/javascript';
+  handleLove.src = 'http://static.bgwhite.cn/handleLove.js';
+  document.body.appendChild(handleLove);
+  const wyyrp = document.createElement('script');
+  wyyrp.type = "text/javascript";
+  wyyrp.src = "https://api.4gml.com/NeteaseMusic?type=bq";
+  wyyrp.async = true;
+  wyyrp.defer = true;
+  document.body.appendChild(wyyrp);
+}
+{/* <script type="text/javascript" src="https://api.4gml.com/NeteaseMusic?type=bq" async defer></script> */}
+// 获取菜单栏
+const getNavList = async() => {
+  try {
+    const { data : { result }} = await Axios.get('http://localhost:3002/menu/api/v1/nav_list?type=1');
+    return result;
+  } catch(err) {
+    throw new Error(err);
+  } 
+}
+
+export default MyApp;

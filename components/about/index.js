@@ -1,3 +1,4 @@
+import Link from 'next/link';
 const About = () => (
     <div className="container">
       <article className="main">
@@ -17,8 +18,16 @@ const About = () => (
         <div className="inner-monologue">
           <span>内心独白</span>
           <ul>
-            <li>1.产品总有提不完的需求，测试总有提不完的bug，所以兄嘚，别慌。一件一件来~</li>
-            <li>1.产品总有提不完的需求，测试总有提不完的bug，所以兄嘚，别慌。一件一件来~</li>
+            <li>1.为什么不在开发的时候，就把bug消灭掉呢？~</li>
+            <li>2.前端只是娱乐圈，我要学后端，我要全栈~</li>
+          </ul>
+          <span id="rp">网易云热评</span>
+          <Link scroll={false}><a href="/about">刷新后查看哦</a></Link>
+          <ul>
+            <li>
+              <p id='wycontent'></p>
+              <p id='wyname'></p>
+            </li>
           </ul>
         </div>
       </article>
