@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types'
+
 /**
  * @description 侧边栏 最近文章
  * @param {*} data
@@ -74,5 +76,12 @@ const RecentArticles = (props) => (
     `}</style>
   </div>    
 )
+
+RecentArticles.propTypes = {
+  recentArticlesList: PropTypes.object
+}
+RecentArticles.defaultProps = {
+  recentArticlesList: []
+}
 
 export default RecentArticles;

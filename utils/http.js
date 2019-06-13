@@ -1,5 +1,6 @@
 import Axios from 'axios';
 
+
 export const postJsonRequest = (url, params) => {
   return Axios({
     method: 'post',
@@ -10,6 +11,7 @@ export const postJsonRequest = (url, params) => {
     },
   });
 }
+
 export const postRequest = (url, params) => {
   return Axios({
     method: 'post',
@@ -28,6 +30,7 @@ export const postRequest = (url, params) => {
     }
   });
 }
+
 export const postHTMLRequest = (url, params) => {
   return Axios({
     method: 'post',
@@ -47,6 +50,7 @@ export const postHTMLRequest = (url, params) => {
     }
   });
 }
+
 export const getRequest = (url, data = {}) => {
   return Axios({
     method: 'get',

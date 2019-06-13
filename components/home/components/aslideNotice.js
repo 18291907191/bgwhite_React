@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types'
+
 /**
  * @description 侧边栏 网站公告
  * @param {*} data
@@ -75,5 +77,12 @@ const AslideNotice = (props) => (
     `}</style>
   </div>    
 )
+
+AslideNotice.propTypes = {
+  noticeList: PropTypes.object
+}
+AslideNotice.defaultProps = {
+  noticeList: []
+}
 
 export default AslideNotice;

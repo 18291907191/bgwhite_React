@@ -7,7 +7,8 @@ const defaultState = fromJS({
     {id:2,name:'About',url:'/about'},
     {id:3,name:'Project',url:'/project'},
     {id:4,name:'GitHub',url:'https://github.com/'},
-    {id:5,name:'Manage',url:'/manage'}
+    {id:5,name:'Manage',url:'http://127.0.0.1:8080'},
+    {id:6,name:'EasyBook',url:'https://www.jianshu.com/u/69941f570736'}
   ],
   focused: 0,
   goodSentences: "没有人因为水的平淡而厌倦水，所以我们也不要因为生活的平淡而摒弃生活!",

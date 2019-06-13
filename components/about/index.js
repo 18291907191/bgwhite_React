@@ -21,14 +21,6 @@ const About = () => (
             <li>1.为什么不在开发的时候，就把bug消灭掉呢？~</li>
             <li>2.前端只是娱乐圈，我要学后端，我要全栈~</li>
           </ul>
-          <span id="rp">网易云热评</span>
-          <Link scroll={false}><a href="/about">刷新后查看哦</a></Link>
-          <ul>
-            <li>
-              <p id='wycontent'></p>
-              <p id='wyname'></p>
-            </li>
-          </ul>
         </div>
       </article>
       <style jsx>{`

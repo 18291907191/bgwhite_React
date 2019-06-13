@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
-import { Fragment} from 'react';
+import { Fragment } from 'react';
+import PropTypes from 'prop-types'
 
 const HomeUI = dynamic({
   modules: () => {
@@ -8,14 +9,13 @@ const HomeUI = dynamic({
       Swiper: import('../../commons/swiper'),
       AslideNotice: import('./aslideNotice'),
       RecentArticles: import('./recentArticles'),
-      MusicPlay: import('./musicPlay'),
       ArticleList: import('./articleList'),
     }
     return components;
   },
   render: (
     {swiperList,articleList,aslideFixed,noticeList,recentArticlesList},
-    {Swiper,ArticleList,AslideNotice,RecentArticles,MusicPlay,BackTop}) => 
+    {Swiper,ArticleList,AslideNotice,RecentArticles,BackTop}) => 
     <Fragment>
       <div className="container">
         <div className="article">
@@ -28,7 +28,6 @@ const HomeUI = dynamic({
         <div className={[`aslide ${aslideFixed?'fixed':''}`]}>
           <AslideNotice noticeList={noticeList} />
           <RecentArticles recentArticlesList={recentArticlesList} />
-          <MusicPlay />
           <BackTop />
         </div>
       </div>
@@ -61,5 +60,18 @@ const HomeUI = dynamic({
       `}</style>
     </Fragment>
 })
+
+HomeUI.propTypes = {
+  swiperList: PropTypes.array,
+  articleList: PropTypes.object,
+  noticeList: PropTypes.object,
+  recentArticlesList: PropTypes.object
+}
+HomeUI.defaultProps = {
+  swiperList: [],
+  articleList: [],
+  noticeList: [],
+  recentArticlesList: []
+}
 
 export default HomeUI;

@@ -8,7 +8,7 @@ const Menu = ({ navList,focused,handleNav }) => (
       navList.toJS().map((item,index) => (
         <Link prefetch key={+new Date() + index} href={item.url}>
           <a 
-            target={item.name=='GitHub'?'_blank':''}
+            target={item.name=='GitHub' || item.name=='Manage'?'_blank':''}
             className={focused==index?'focused':''}
             onClick={() => (handleNav(index))}
           >
@@ -78,6 +78,9 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
   return {
     handleNav(index) {
+      if(index== 3 || index == 4) {
+        return ;
+      }
       sessionStorage.setItem('navIndex',index);
       dispatch(actionCreators.selectNavItemAction(index));
     }

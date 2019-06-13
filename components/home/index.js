@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import HomeUI from './components/indexUI';
+import { Spin } from 'antd';
 import * as actionCreators from './store/actionCreators'
 import { getRequest } from '../../utils/http';
 
@@ -9,24 +10,42 @@ class Home extends PureComponent {
     const articleList = await getArticleList();
     return { articleList }
   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    }
+  }
+
   render() {
     const { swiperList,noticeList,recentArticlesList,aslideIsFixed,articleList} = this.props;
     return (
-      <HomeUI
-        swiperList={swiperList}
-        noticeList={noticeList}
-        recentArticlesList={recentArticlesList}
-        aslideFixed={aslideIsFixed}
-        articleList={articleList}
-      />
+      <Spin spinning={this.state.loading}>
+        <HomeUI
+          swiperList={swiperList}
+          noticeList={noticeList}
+          recentArticlesList={recentArticlesList}
+          aslideFixed={aslideIsFixed}
+          articleList={articleList}
+        />
+      </Spin>
     )
   }
+
+  toggle(value){
+    this.setState({
+      loading: value
+    })
+  }
+
   componentDidMount() {
     window.addEventListener('scroll',this.props.aslideFixed);
+    this.toggle(false);
   }
 }
 
-const getArticleList = async(data) => {
+const getArticleList = async() => {
   try {
     const {data:{ result }} = await getRequest('http://localhost:3002/article/api/v1/article_list');
     return result;

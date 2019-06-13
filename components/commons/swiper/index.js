@@ -1,4 +1,7 @@
-class CitiesSlider extends React.Component {
+import { Component } from 'react';
+import PropTypes from 'prop-types'
+class CitiesSlider extends Component {
+
   constructor(props) {
     super(props);
     
@@ -456,6 +459,10 @@ class CitiesSlider extends React.Component {
       </div>
     );
   }
+}
+
+CitiesSlider.propTypes = {
+  slides: PropTypes.array
 }
 
 export default CitiesSlider;

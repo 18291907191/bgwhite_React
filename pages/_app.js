@@ -126,14 +126,7 @@ const createScript = () => {
   handleLove.type = 'text/javascript';
   handleLove.src = 'http://static.bgwhite.cn/handleLove.js';
   document.body.appendChild(handleLove);
-  const wyyrp = document.createElement('script');
-  wyyrp.type = "text/javascript";
-  wyyrp.src = "https://api.4gml.com/NeteaseMusic?type=bq";
-  wyyrp.async = true;
-  wyyrp.defer = true;
-  document.body.appendChild(wyyrp);
 }
-{/* <script type="text/javascript" src="https://api.4gml.com/NeteaseMusic?type=bq" async defer></script> */}
 // 获取菜单栏
 const getNavList = async() => {
   try {

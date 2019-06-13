@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
 import { Fragment,Component } from 'react';
 import "antd/dist/antd.css";
+import 'highlight.js/styles/github.css';
+import '../../../assets/styles/yeh-md-theme.css'
+import '../../../assets/styles/ocean.min.css'
 
 const Header = dynamic(import('../header'),{
   loading: () => <p>正在加载组件...</p>
@@ -11,16 +14,18 @@ const Footer = dynamic(import('../footer'),{
 })
 
 class Layout extends Component {
+  
   constructor(props) {
     super(props);
   }
+
    render() {
     const { navList,children} = this.props;
      return (
         <Fragment>
 
-        {/* <Header navList={navList} /> */}
         <Header />
+        
         { children }
     
         <Footer />
