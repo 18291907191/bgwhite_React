@@ -43,12 +43,12 @@ class ArticleList extends PureComponent {
                   <img
                     alt="狗尾草的前端博客"
                     title={item.title}
-                    src={item.title_image?item.title_image:"http://static.bgwhite.cn/title-img-default.jpg"}
+                    src={item.title_image?item.title_image:"http://static.bgwhite.cn/react-website/title-img-default.jpg"}
                   />
                 </a> 
                 <div className="cont">
                   <header>
-                    <a href={`/detail?id=${item.id}`} className="tag" >{item.tag?item.tag : 'HTML5'}</a>
+                    <a href={`/detail?id=${item.id}`} className="tag" >{item.tagName?item.tagName : 'HTML5'}</a>
                     <a href={`/detail?id=${item.id}`} className="tit" >{item.title}</a>
                   </header>
                   <p className="meta">

@@ -124,7 +124,7 @@ class MyApp extends App {
 const createScript = () => {
   const handleLove = document.createElement('script');
   handleLove.type = 'text/javascript';
-  handleLove.src = 'http://static.bgwhite.cn/handleLove.js';
+  handleLove.src = 'http://static.bgwhite.cn/react-website/handleLove.js';
   document.body.appendChild(handleLove);
 }
 // 获取菜单栏

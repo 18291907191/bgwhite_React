@@ -9,3 +9,8 @@ export const articleList = (data) => ({
   type: actionTypes.ARTICLE_LIST,
   data: data
 })
+
+export const articleDetail = (data) => ({
+  type: actionTypes.ARTICLE_DETAIL,
+  data: data
+})

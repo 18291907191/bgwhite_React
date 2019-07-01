@@ -34,7 +34,7 @@ const About = () => (
           height: 100%;
           background-color: #ffffff;
           overflow: hidden;
-          background: url('http://static.bgwhite.cn/bg.png') no-repeat right top #ffffff;
+          background: url('http://static.bgwhite.cn/react-website/bg.png') no-repeat right top #ffffff;
           box-sizing: border-box;
           padding: 0 20px;
         }
