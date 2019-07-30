@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 
 const MarQuee = (props) => (
-  <div className="text-center">
+  <div>
     <marquee 
       behavior="slide"
     >
-      {props.goodSentences}
+      {props.goodSentences[[parseInt(10*Math.random())]]}
     </marquee>
   </div>
 )
 
 const mapStateToProps = (state) => {
   return {
-    goodSentences: state.header.get('goodSentences'),
+    goodSentences: state.header.goodSentences,
   }
 }
 

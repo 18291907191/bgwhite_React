@@ -1,24 +1,16 @@
 import App, {Container} from 'next/app'
 import Head from 'next/head';
 import React, { Fragment } from 'react'
+import {withRouter,Router} from 'next/router'
 import { RouterTitle } from '../constans/ConstTypes';
 import { Provider } from 'react-redux';
-import store from '../store';
+import withReduxStore from '../lib/with-redux-store'
 import Layout from '../components/commons/layout/default';
-import Axios from 'axios';
-
 
 class MyApp extends App {
-  static async getInitialProps ({ Component, ctx }) {
 
-    // const navList = await getNavList();
-    
-    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-    return {pageProps:{...pageProps}}
-
-  }
   render () {
-    const {Component, pageProps,router} = this.props
+    const {Component, pageProps,reduxStore,router} = this.props
     return (
       <Fragment>
         <Head>
@@ -30,7 +22,7 @@ class MyApp extends App {
 
         <Container>
 
-          <Provider store={store}>
+          <Provider store={reduxStore}>
 
             <Layout>
 
@@ -116,10 +108,13 @@ class MyApp extends App {
       </Fragment>
     )
   }
+
   componentDidMount() {
     createScript();
   }
+  
 }
+
 //创建script节点
 const createScript = () => {
   const handleLove = document.createElement('script');
@@ -127,14 +122,5 @@ const createScript = () => {
   handleLove.src = 'http://static.bgwhite.cn/react-website/handleLove.js';
   document.body.appendChild(handleLove);
 }
-// 获取菜单栏
-const getNavList = async() => {
-  try {
-    const { data : { result }} = await Axios.get('http://localhost:3002/menu/api/v1/nav_list?type=1');
-    return result;
-  } catch(err) {
-    throw new Error(err);
-  } 
-}
 
-export default MyApp;
+export default withReduxStore(withRouter(MyApp));

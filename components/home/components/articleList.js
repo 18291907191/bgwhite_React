@@ -1,17 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { getRequest } from '../../../utils/http.js';
 import { Pagination } from 'antd';
 
-class ArticleList extends PureComponent {
+class ArticleList extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.handleChangePagination = this.handleChangePagination.bind(this);
-    let articleList = props.articleList;
-    this.state = {
-      articleList: articleList,
-    }
   }
 
   async handleChangePagination(page,pageSize) {
@@ -19,18 +15,11 @@ class ArticleList extends PureComponent {
     if(code != 200) {
       return false;
     }
-    this.setState({
-      articleList: result
-    })
   }
   
   render() {
 
-    const { articleList:{articleData,total} } = this.state;
-
-    const pagination = (
-      <Pagination style={{'margin':'20px 0','float':'right','overflow':'hidden'}} defaultPageSize={10} defaultCurrent={1} total={total} onChange={this.handleChangePagination} />
-    )
+    const { articleList:{articleData = [],total = 0}} = this.props;
 
     return (
       <div className="article-wrap">
@@ -38,7 +27,9 @@ class ArticleList extends PureComponent {
           {
             articleData.map((item,index) => (
               <li key={+new Date() + index} className={total == 1?'bot':''}>
-                <i className="iconfont recent">&#xe673;</i>
+                {
+                  item.isNew ? <i className="iconfont recent">&#xe673;</i> : ''
+                }
                 <a href={`/detail?id=${item.id}`}  className="img-hd">
                   <img
                     alt="狗尾草的前端博客"
@@ -52,7 +43,7 @@ class ArticleList extends PureComponent {
                     <a href={`/detail?id=${item.id}`} className="tit" >{item.title}</a>
                   </header>
                   <p className="meta">
-                    <span>{item.create_time}</span>
+                    <span>{item.update_time}</span>
                     <span>阅读({item.reader_number})</span>
                     <span>评论({item.comment_number?item.comment_number:0})</span> 
                     <span>赞({item.good_number})</span> 
@@ -62,7 +53,7 @@ class ArticleList extends PureComponent {
               </li>
             ))
           }
-          {pagination}
+          <Pagination style={{'margin':'20px 0','float':'right','overflow':'hidden'}} defaultPageSize={10} defaultCurrent={1} total={total} onChange={this.handleChangePagination} />
         </ul>
         <style jsx>{`
           .article-wrap {
@@ -170,18 +161,19 @@ class ArticleList extends PureComponent {
           }
         `}</style>
     </div>
+    // <div></div>
     )
 
   }
 
 }
 
-ArticleList.propTypes = {
-  articleList: PropTypes.object
-}
+// ArticleList.propTypes = {
+//   articleList: PropTypes.object
+// }
 
-ArticleList.defaultProps = {
-  articleList: []
-}
+// ArticleList.defaultProps = {
+//   articleList: []
+// }
 
 export default ArticleList;

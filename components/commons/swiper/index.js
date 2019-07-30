@@ -44,13 +44,28 @@ class CitiesSlider extends Component {
     if (activeSlide >= length) activeSlide = 0;
     this.setState({ activeSlide, prevSlide });
   }
+
+  JumpSwiperDetail(data){
+    switch(data.city) {
+      case 'Vue.js':
+        window.open('https://www.cnblogs.com/bgwhite/category/1247632.html');
+        break;
+      case 'React.js':
+        window.open('https://www.cnblogs.com/bgwhite/category/1247634.html');
+        break;
+      case 'Node.js':
+        window.open('https://www.cnblogs.com/bgwhite/category/1247638.html');
+        break;
+    }
+  }
   
   render() {
     const { activeSlide, prevSlide, sliderReady } = this.state;
+    const { slides } = this.props;
     return (
       <div className={`slider ${sliderReady?'s--ready':''}`}>
         <div className="slider__slides">
-          {this.props.slides.map((slide, index) => (
+          {slides.map((slide, index) => (
             <div
               className={`slider__slide ${activeSlide === index?'s--active':''} ${prevSlide === index?'s--prev':''}`}
               key={index}
@@ -60,7 +75,7 @@ class CitiesSlider extends Component {
                 <h2 className="slider__slide-heading">
                   {slide.city.split('').map((l,i) => <span key={i}>{l}</span>)}
                 </h2>
-                <p className="slider__slide-readmore">read more</p>
+                <p className="slider__slide-readmore" onClick={() => this.JumpSwiperDetail(slide)}>read more</p>
               </div>
               <div className="slider__slide-parts">
                 {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
@@ -128,6 +143,7 @@ class CitiesSlider extends Component {
           }
           .slider__slide.s--active .slider__slide-subheading {
               -webkit-transition-delay: 0.65s;
+              color: #ffffff;
               transition-delay: 0.65s;
               opacity: 1;
               -webkit-transform: translateY(0);
@@ -157,6 +173,7 @@ class CitiesSlider extends Component {
               opacity: 1;
               -webkit-transform: translateY(0);
               transform: translateY(0);
+              color: #ffffff;
           }
           .slider__slide-heading span:nth-child(1) {
               -webkit-transition-delay: 0s;

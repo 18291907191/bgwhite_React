@@ -1,8 +1,8 @@
-import React , { PureComponent } from 'react';
+import React , { Component } from 'react';
 import { Spin } from 'antd';
 import hljs from 'highlight.js'
 import marked from 'marked';
-import { getRequest } from '../../utils/http';
+import $api from '../../api';
 import BackTop from '../commons/backTop/index';
 
 marked.setOptions({
@@ -20,32 +20,17 @@ marked.setOptions({
   xhtml: false
 });
 
-class Detail extends PureComponent {
+class Detail extends Component {
 
-  static async getInitialProps({query}) {
-    const articleDetail = await getArticleDetail(query);
-    return { articleDetail }
-  }
-
-  constructor(props) {
-
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
       loading: true
     }
-
-  }
-
-  toggle(value){
-    this.setState({
-      loading: value
-    })
   }
 
   render() {
-    const {articleDetail:{content,title,reader_number,good_number,create_time,tag_id}} = this.props;
-
+    const {articleDetail:{content,title,reader_number,good_number,create_time}} = this.props;
     return (
       <div className="mark-wrap">
         <Spin spinning={this.state.loading}>
@@ -98,13 +83,17 @@ class Detail extends PureComponent {
               color: #3576e0;
             }
             .tip {
-              background-color: #fbfbfb;
+              background-color: #3576e0;
+              color: #ffffff;
+              background-color: rgba(65,105,225,.4);
+              box-sizing: border-box;
+              padding: 20px;
             }
             .tip h2 {
               font-size: 1.2em;
               font-weight: 600;
               margin: 24px 0 12px 0;
-              color: #313236;
+              color: #ffffff;
             }
             .tip li {
               line-height: 30px;
@@ -116,11 +105,27 @@ class Detail extends PureComponent {
     )
   };
 
-  componentDidMount() {
-    this.toggle(false);
-    createScript();
+  componentWillMount() {
+    this.setState({
+      loading: false
+    })
   }
 
+  componentDidMount() {
+    createScript();
+    const { router:{query:{id}} } = this.props;
+    $api.ARTICLE.setArticleReaderNum({id})
+    .then(res => {
+      console.log('119',res);
+    })
+  } 
+
+}
+
+Detail.getInitialProps = async ({query}) => {
+  const {data:{result}} = await  $api.ARTICLE.getArticleDetail(query);
+  const articleDetail = result;
+  return { articleDetail }
 }
 
 //创建script节点
@@ -133,13 +138,13 @@ const createScript = () => {
   document.body.appendChild(wyyrp);
 }
 
-const getArticleDetail = async(params) => {
-  try {
-    const {data:{result}} = await getRequest('http://localhost:3002/article/api/v1/article_detail',params);
-    return result;
-  } catch(err) {
-    throw new Error(err);
-  }
-}
+// const getArticleDetail = async(params) => {
+//   try {
+//     const {data:{result}} = await $api.ARTICLE.getArticleDetail(params);
+//     return result;
+//   } catch(err) {
+//     throw new Error(err);
+//   }
+// }
 
 export default Detail;

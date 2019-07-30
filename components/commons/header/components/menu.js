@@ -5,8 +5,8 @@ import * as actionCreators from '../store/actionCreators'
 const Menu = ({ navList,focused,handleNav }) => (
   <nav>
     {
-      navList.toJS().map((item,index) => (
-        <Link prefetch key={+new Date() + index} href={item.url}>
+      navList.map((item,index) => (
+        <Link key={+new Date() + index} href={item.url}>
           <a 
             target={item.name=='GitHub' || item.name=='Manage'?'_blank':''}
             className={focused==index?'focused':''}
@@ -70,8 +70,8 @@ const Menu = ({ navList,focused,handleNav }) => (
 
 const mapStateToProps = (state) => {
   return {
-    navList: state.header.get('navList'),
-    focused: state.header.get('focused')
+    navList: state.header.navList,
+    focused: state.header.focused
   }
 }
 

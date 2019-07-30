@@ -1,25 +1,16 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import PropTypes from 'prop-types'
 
-/**
- * @description 侧边栏 最近文章
- * @param {*} data
- * @return {Object} Dom 
- */
-const RecentArticles = (props) => (
+const RecentArticles = ({recentArticlesList}) => (
   <div className="aslide-recent-articles">
     <h3 className="hd"><span><i className="iconfont">&#xe610;&nbsp;&nbsp;</i>推荐文章</span></h3>
     <ul className="recent-articles-cont">
       {
-        props.recentArticlesList.map((item,index) => {
-          return (
-            <li key={+new Date() + index}>
-              <Link href='/'>
-                <a>{item.get('title')}</a>
-              </Link>
-            </li>
-          )
-        })
+        recentArticlesList.map((item,index) => 
+          <li key={+new Date() + index}>
+            <a href="/">{item.title}</a>
+          </li>
+        )
       }                
     </ul>
     <style>{`
@@ -67,7 +58,7 @@ const RecentArticles = (props) => (
       .recent-articles-cont li a {
         color: #333333;
         display: block;
-        width: 330px;
+        // width: 330px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -77,11 +68,11 @@ const RecentArticles = (props) => (
   </div>    
 )
 
-RecentArticles.propTypes = {
-  recentArticlesList: PropTypes.object
-}
-RecentArticles.defaultProps = {
-  recentArticlesList: []
-}
+// RecentArticles.propTypes = {
+//   recentArticlesList: PropTypes.object
+// }
+// RecentArticles.defaultProps = {
+//   recentArticlesList: []
+// }
 
 export default RecentArticles;

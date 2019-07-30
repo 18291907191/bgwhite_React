@@ -1,26 +1,16 @@
-import Link from 'next/link';
 import PropTypes from 'prop-types'
 
-/**
- * @description 侧边栏 网站公告
- * @param {*} data
- * @return {Object} Dom 
- */
-const AslideNotice = (props) => (
+const AslideNotice = ({noticeList}) => (
   <div className="aslide-model">
     <h3 className="hd"><span><i className="iconfont">&#xe611;&nbsp;&nbsp;</i>网站公告</span></h3>
     <ul className="aslide-model-cont">
       {
-        props.noticeList.map((item,index) => {
-          return (
-            <li key={+new Date() + index}>
-              <Link href='/'>
-                <a>{item.get('cont')}</a>
-              </Link>
-              <span>{item.get('createTime')}</span>
-            </li>
-          )
-        })
+        noticeList.map((item,index) => 
+          <li key={+new Date() + index}>
+            <a href="/a">{item.cont}</a>
+            <span>{item.createTime}</span>
+          </li>
+        )
       }                 
     </ul>
     <style>{`
@@ -65,7 +55,7 @@ const AslideNotice = (props) => (
       .aslide-model-cont li a {
         color: #333333;
         display: block;
-        width: 280px;
+        // width: 280px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -78,11 +68,11 @@ const AslideNotice = (props) => (
   </div>    
 )
 
-AslideNotice.propTypes = {
-  noticeList: PropTypes.object
-}
-AslideNotice.defaultProps = {
-  noticeList: []
-}
+// AslideNotice.propTypes = {
+//   noticeList: PropTypes.object
+// }
+// AslideNotice.defaultProps = {
+//   noticeList: []
+// }
 
 export default AslideNotice;

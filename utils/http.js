@@ -1,6 +1,5 @@
 import Axios from 'axios';
 
-
 export const postJsonRequest = (url, params) => {
   return Axios({
     method: 'post',
@@ -16,7 +15,6 @@ export const postRequest = (url, params) => {
   return Axios({
     method: 'post',
     url: url,
-    // path: url.replace(base.Microservice, ''),
     data: params,
     transformRequest: [function (data) {
       let ret = ''
@@ -42,7 +40,6 @@ export const postHTMLRequest = (url, params) => {
       for (let it in data) {
         ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
       }
-      console.log(ret)
       return ret
     }],
     headers: {
@@ -55,7 +52,6 @@ export const getRequest = (url, data = {}) => {
   return Axios({
     method: 'get',
     params: data,
-    // path: url.replace(base.Microservice, ''),
     url: url,
   });
 }
