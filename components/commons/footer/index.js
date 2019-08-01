@@ -21,7 +21,15 @@ const Footer = () => {
           ))
         }
       </ul>
-      <iframe frameBorder="no" border="0" marginWidth="0" marginHeight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1347033909&auto=1&height=66"></iframe>
+      <iframe 
+        frameBorder="no" 
+        border="0" 
+        marginWidth="0" 
+        marginHeight="0" 
+        width="330" 
+        height="86" 
+        src="//music.163.com/outchain/player?type=2&id=1347033909&auto=1&height=66">
+      </iframe>
     <style jsx>{`
       footer {
         width: 100%;

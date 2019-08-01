@@ -56,6 +56,10 @@ class BackTop extends PureComponent {
           background-color: #45BCF9;
           color: #ffffff;
           cursor: pointer;
+          opacity: .8;
+        }
+        .backtop:hover {
+          opacity: 1;
         }
         .backtop i {
           font-size: 30px;

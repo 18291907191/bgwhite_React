@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Fragment,Component } from 'react';
+import BackTop from '../backTop/index';
 import "antd/dist/antd.css";
 import 'highlight.js/styles/github.css';
 import '../../../assets/styles/yeh-md-theme.css'
@@ -28,6 +29,8 @@ class Layout extends Component {
         
         { children }
     
+        <BackTop />
+
         <Footer />
     
       </Fragment>

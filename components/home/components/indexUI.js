@@ -3,7 +3,6 @@ import Swiper         from '../../commons/swiper';
 import ArticleList    from './articleList';
 import AslideNotice   from './aslideNotice';
 import RecentArticles from './recentArticles';
-import BackTop        from '../../commons/backTop';
 
 const HomeUI = ({swiperList,articleList,aslideFixed,noticeList,recentArticlesList}) => (
   <div className="container">
@@ -17,7 +16,6 @@ const HomeUI = ({swiperList,articleList,aslideFixed,noticeList,recentArticlesLis
     <div className={[`aslide ${aslideFixed?'fixed':''}`]}>
       <AslideNotice noticeList={noticeList} />
       <RecentArticles recentArticlesList={recentArticlesList} />
-      <BackTop />
     </div>
     <style jsx>{`
       .container {

@@ -13,6 +13,7 @@ class MyApp extends App {
     const {Component, pageProps,reduxStore,router} = this.props
     return (
       <Fragment>
+        
         <Head>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta charSet='utf-8' />
@@ -90,12 +91,12 @@ class MyApp extends App {
           }
           @font-face {
             font-family: 'iconfont';  /* project id 1112247 */
-            src: url('//at.alicdn.com/t/font_1112247_aprz252dcgn.eot');
-            src: url('//at.alicdn.com/t/font_1112247_aprz252dcgn.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.woff2') format('woff2'),
-            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.woff') format('woff'),
-            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_1112247_aprz252dcgn.svg#iconfont') format('svg');
+            src: url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.eot');
+            src: url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.woff2') format('woff2'),
+            url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.woff') format('woff'),
+            url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_1112247_dsk21lo5ii.svg#iconfont') format('svg');
           }
           .iconfont {
             font-family: "iconfont" !important;
