@@ -1,8 +1,9 @@
 import React , { Component } from 'react';
-import { Spin,Button } from 'antd';
+import { Spin,Button,message } from 'antd';
 import hljs from 'highlight.js'
 import marked from 'marked';
 import $api from '../../api';
+import cookie from 'react-cookies';
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -119,7 +120,6 @@ class Detail extends Component {
             .tip {
               background-color: #3576e0;
               color: #ffffff;
-              // background-color: rgba(65,105,225,.4);
               opacity: .9;
               box-sizing: border-box;
               padding: 20px;
@@ -152,14 +152,17 @@ class Detail extends Component {
 
   // 点赞/取消
   handleGood(isHandleGood) {
-    // 判断是否登录，未登录去登录 登陆过点赞
-    // this.router.push
-    // href={`/detail?id=${item.id}`}
-    console.log('158',this.props);
-    this.props.router.push({pathname:'/login'});
-    // this.setState({
-    //   isHandleGood: !isHandleGood
-    // })
+    if(cookie.load('role') == 1) {
+      message.warning('给自己点赞，忒无耻！！！')
+      return ;
+    }
+    if(cookie.load('adminToken')) {
+      this.setState({
+        isHandleGood: !isHandleGood
+      })
+    } else {
+      this.props.router.push({pathname:'/login'});
+    }
   }
 
   // 打赏
