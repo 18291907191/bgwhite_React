@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { getRequest } from '../../../utils/http.js';
 import { Pagination } from 'antd';
+import $api from '../../../api';
 
 class ArticleList extends Component {
 
@@ -11,7 +12,9 @@ class ArticleList extends Component {
   }
 
   async handleChangePagination(page,pageSize) {
-    const {data:{code,result}} = await getRequest('http://localhost:3002/article/api/v1/article_list',{page:page,size:pageSize});
+    // const {data:{code,result}} = await getRequest('http://localhost:3002/article/api/v1/article_list',{page:page,size:pageSize});
+    const { data: {code, result}} = await $api.ARTICLE.getArticleList({status: 1,page, size: pageSize });
+    console.log(result);
     if(code != 200) {
       return false;
     }
@@ -53,7 +56,12 @@ class ArticleList extends Component {
               </li>
             ))
           }
-          <Pagination style={{'margin':'20px 0','float':'right','overflow':'hidden'}} defaultPageSize={10} defaultCurrent={1} total={total} onChange={this.handleChangePagination} />
+          <Pagination 
+            style={{'margin':'20px 0','float':'right','overflow':'hidden'}} 
+            defaultPageSize={10} 
+            defaultCurrent={1} 
+            total={total} 
+            onChange={this.handleChangePagination} />
         </ul>
         <style jsx>{`
           .article-wrap {
@@ -161,19 +169,18 @@ class ArticleList extends Component {
           }
         `}</style>
     </div>
-    // <div></div>
     )
 
   }
 
 }
 
-// ArticleList.propTypes = {
-//   articleList: PropTypes.object
-// }
+ArticleList.propTypes = {
+  articleList: PropTypes.object
+}
 
-// ArticleList.defaultProps = {
-//   articleList: []
-// }
+ArticleList.defaultProps = {
+  articleList: {}
+}
 
 export default ArticleList;

@@ -27,9 +27,11 @@ app.prepare().then(() => {
     if (process.platform === 'wind32') {
       cmd = 'start "%ProgramFiles% Internet Explorer iexplore.exe"'
     } else if (process.platform === 'linux') {
-      cmd = 'xdg-open'
+      // cmd = 'xdg-open'
+      cmd = 'start'
     } else if (process.platform === 'darwin') {
-      cmd = 'open'
+      // cmd = 'open'
+      cmd = 'start'
     }
 
     childProcess.exec(`${cmd} "http://localhost:3000"`);

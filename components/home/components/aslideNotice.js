@@ -6,7 +6,7 @@ const AslideNotice = ({noticeList}) => (
     <ul className="aslide-model-cont">
       {
         noticeList.map((item,index) => 
-          <li key={+new Date() + index}>
+          <li key={index}>
             <a href="/a">{item.cont}</a>
             <span>{item.createTime}</span>
           </li>
@@ -20,10 +20,7 @@ const AslideNotice = ({noticeList}) => (
         _height: 160px;
         margin-bottom: 20px;
         transition: .5s;
-      }
-      .aslide-model:hover {
-        box-shadow: 0 0 10px #ccc;
-        transform: transLateY(-5px);
+        background-color: #ffffff;
       }
       .aslide-model .hd {
         height: 30px;
@@ -55,7 +52,6 @@ const AslideNotice = ({noticeList}) => (
       .aslide-model-cont li a {
         color: #333333;
         display: block;
-        // width: 280px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -68,11 +64,11 @@ const AslideNotice = ({noticeList}) => (
   </div>    
 )
 
-// AslideNotice.propTypes = {
-//   noticeList: PropTypes.object
-// }
-// AslideNotice.defaultProps = {
-//   noticeList: []
-// }
+AslideNotice.propTypes = {
+  noticeList: PropTypes.array
+}
+AslideNotice.defaultProps = {
+  noticeList: []
+}
 
 export default AslideNotice;

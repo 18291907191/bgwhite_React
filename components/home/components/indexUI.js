@@ -1,4 +1,4 @@
-  // import PropTypes from 'prop-types'
+  import PropTypes from 'prop-types'
 import Swiper         from '../../commons/swiper';
 import ArticleList    from './articleList';
 import AslideNotice   from './aslideNotice';
@@ -47,17 +47,17 @@ const HomeUI = ({swiperList,articleList,aslideFixed,noticeList,recentArticlesLis
   </div>
 )
 
-// HomeUI.propTypes = {
-//   swiperList: PropTypes.array,
-//   articleList: PropTypes.object,
-//   noticeList: PropTypes.object,
-//   recentArticlesList: PropTypes.object
-// }
-// HomeUI.defaultProps = {
-//   swiperList: [],
-//   articleList: [],
-//   noticeList: [],
-//   recentArticlesList: []
-// }
+HomeUI.propTypes = {
+  swiperList: PropTypes.array,
+  articleList: PropTypes.object,
+  noticeList: PropTypes.array,
+  recentArticlesList: PropTypes.array
+}
+HomeUI.defaultProps = {
+  swiperList: [],
+  articleList: [],
+  noticeList: [],
+  recentArticlesList: []
+}
 
 export default HomeUI;

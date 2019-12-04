@@ -2,12 +2,12 @@ import { SELECT_NAV_ITEM } from './actionTypes';
 
 const defaultState = {
   navList: [
-    {id:1,name:'Home',url:'/'},
-    {id:2,name:'About',url:'/about'},
-    {id:3,name:'Project',url:'/project'},
-    {id:4,name:'GitHub',url:'https://github.com/'},
-    {id:5,name:'Manage',url:'http://127.0.0.1:8080'},
-    {id:6,name:'EasyBook',url:'https://www.jianshu.com/u/69941f570736'}
+    { id: 1, name: 'Home', url: '/' },
+    { id: 2, name: 'About', url: '/about' },
+    { id: 3, name: 'Project', url: '/project' },
+    { id: 4, name: 'GitHub', url: 'https://github.com/' },
+    { id: 5, name: 'Manage', url: 'http://manage.bgwhite.cn' },
+    { id: 6, name: 'EasyBook', url: 'https://www.jianshu.com/u/69941f570736' }
   ],
   focused: 0,
   goodSentences: [
@@ -27,7 +27,7 @@ const defaultState = {
 export default (state = defaultState,action) => {
   switch(action.type) {
     case SELECT_NAV_ITEM:
-    return  Object.assign({},state,{focused: action.data});
+    return  Object.assign({}, state, {focused: action.data});
     default: 
     return state;
   }

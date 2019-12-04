@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import PropTypes from 'prop-types'
 
 const RecentArticles = ({recentArticlesList}) => (
@@ -7,7 +6,7 @@ const RecentArticles = ({recentArticlesList}) => (
     <ul className="recent-articles-cont">
       {
         recentArticlesList.map((item,index) => 
-          <li key={+new Date() + index}>
+          <li key={index}>
             <a href="/">{item.title}</a>
           </li>
         )
@@ -20,10 +19,7 @@ const RecentArticles = ({recentArticlesList}) => (
         _height: 160px;
         margin-bottom: 10px;
         transition: .5s;
-      }
-      .aslide-recent-articles:hover {
-        box-shadow: 0 0 10px #ccc;
-        transform: transLateY(-5px);
+        background-color: #ffffff;
       }
       .aslide-recent-articles .hd {
         height: 30px;
@@ -58,7 +54,6 @@ const RecentArticles = ({recentArticlesList}) => (
       .recent-articles-cont li a {
         color: #333333;
         display: block;
-        // width: 330px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -68,11 +63,11 @@ const RecentArticles = ({recentArticlesList}) => (
   </div>    
 )
 
-// RecentArticles.propTypes = {
-//   recentArticlesList: PropTypes.object
-// }
-// RecentArticles.defaultProps = {
-//   recentArticlesList: []
-// }
+RecentArticles.propTypes = {
+  recentArticlesList: PropTypes.array
+}
+RecentArticles.defaultProps = {
+  recentArticlesList: []
+}
 
 export default RecentArticles;

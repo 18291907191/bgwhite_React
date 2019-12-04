@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import { Spin,Button,message } from 'antd';
+import { Spin, Button, message, Modal } from 'antd';
 import hljs from 'highlight.js'
 import marked from 'marked';
 import $api from '../../api';
@@ -27,17 +27,18 @@ class Detail extends Component {
     this.state = {
       loading: true,
       isHandleGood: false,
+      visibleReward: false,
     }
-    this.handleGood = this.handleGood.bind(this);
     this.handleReward = this.handleReward.bind(this);
+    this.handleCancelClick = this.handleCancelClick.bind(this);
   }
 
   render() {
-    const {articleDetail:{content,title,reader_number,good_number,create_time}} = this.props;
-    const { isHandleGood } = this.state;
+    const {articleDetail:{content,title,reader_number,create_time}} = this.props;
+    const { isHandleGood, loading, visibleReward } = this.state;
     return (
       <div className="mark-wrap">
-        <Spin spinning={this.state.loading}>
+        <Spin spinning={loading}>
         <div className="mark">
           <h1>{title}</h1>
           <div className="md" dangerouslySetInnerHTML = {{__html: marked(content)}}></div>
@@ -48,7 +49,7 @@ class Detail extends Component {
           <ul className="opt-btn">
             <li onClick={() => this.handleGood(isHandleGood)}>
               {
-                isHandleGood ? <i className="iconfont">&#xe9b8;取消</i> : <i className="iconfont">&#xe610;点赞</i>
+                isHandleGood ? <i className="iconfont">&#xe610;已点赞</i> : <i className="iconfont">&#xe610;点赞</i>
               }
             </li>
             <li onClick={this.handleReward}><i className="iconfont">&#xef56;打赏</i></li>
@@ -61,6 +62,14 @@ class Detail extends Component {
             </li>
             <li>【{title}】未经同意不得转载！转载请联系狗尾草</li>
           </ul>
+          <Modal 
+          title="Reward"
+          footer={null}
+          visible={visibleReward}
+          maskClosable={true}
+          onCancel={this.handleCancelClick}>
+            <p>最好的打赏就是默默努力，为技术的进步贡献一份自己的力量~谢谢你，陌生人！</p>
+          </Modal>
           <style jsx>{`
             .mark-wrap {
               width: 100%;
@@ -156,18 +165,42 @@ class Detail extends Component {
       message.warning('给自己点赞，忒无耻！！！')
       return ;
     }
+    this.setState({
+      loading: true,
+    })
     if(cookie.load('adminToken')) {
-      this.setState({
-        isHandleGood: !isHandleGood
+      const { router:{query:{id}} } = this.props;
+      $api.ARTICLE.setArticleGoodNum({id}).then(({data}) => {
+        if (data.code == '403') {
+          message.warning(data.message);
+          this.props.router.push({pathname:'/login'});
+          return false;
+        }
+        this.setState({
+          isHandleGood: !isHandleGood,
+          loading: false,
+        })
       })
     } else {
+      this.setState({
+        loading: false,
+      })
       this.props.router.push({pathname:'/login'});
     }
   }
 
   // 打赏
   handleReward() {
-    console.log('159');
+    this.setState({
+      visibleReward: true
+    })
+  }
+
+  // 关闭打赏弹出框
+  handleCancelClick() {
+    this.setState({
+      visibleReward: false
+    })
   }
 
   //创建script节点

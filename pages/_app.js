@@ -1,7 +1,7 @@
 import App, {Container} from 'next/app'
 import Head from 'next/head';
 import React, { Fragment } from 'react'
-import {withRouter,Router} from 'next/router'
+import {withRouter} from 'next/router'
 import { RouterTitle } from '../constans/ConstTypes';
 import { Provider } from 'react-redux';
 import withReduxStore from '../lib/with-redux-store'

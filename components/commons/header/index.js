@@ -14,16 +14,19 @@ class Header extends Component {
   componentDidMount() {
     switch(Router.pathname) {
       case '':
-        sessionStorage.setItem('navIndex',0); //页面刷新时，缓存当前路由
+        sessionStorage.setItem('navIndex', 0);
       break;
       case '/':
-        sessionStorage.setItem('navIndex',0); //页面刷新时，缓存当前路由
+        sessionStorage.setItem('navIndex', 0);
       break;
       case '/about':
-        sessionStorage.setItem('navIndex',1); //页面刷新时，缓存当前路由
+        sessionStorage.setItem('navIndex', 1);
+      break;
+      case '/project':
+        sessionStorage.setItem('navIndex', 2);
       break;
       default:
-        sessionStorage.setItem('navIndex',0); //页面刷新时，缓存当前路由
+        sessionStorage.setItem('navIndex', 0);
       break;
     }
     this.props.initNavList();

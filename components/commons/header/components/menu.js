@@ -1,20 +1,18 @@
 import { connect } from 'react-redux';
-import Link from 'next/link'
 import * as actionCreators from '../store/actionCreators'
 
-const Menu = ({ navList,focused,handleNav }) => (
+const Menu = ({ navList, focused, handleNav }) => (
   <nav>
     {
-      navList.map((item,index) => (
-        <Link key={+new Date() + index} href={item.url}>
-          <a 
-            target={item.name=='GitHub' || item.name=='Manage'?'_blank':''}
-            className={focused==index?'focused':''}
-            onClick={() => (handleNav(index))}
-          >
-            {item.name}
-          </a>
-        </Link>
+      navList.map((item, index) => (
+        <a 
+          key={ item.id }
+          href={ item.url }
+          target={ item.name == 'GitHub' || item.name == 'Manage' ? '_blank' : null }
+          className={ focused == index ? 'focused' : null }
+          onClick={ () => handleNav(index) }>
+          { item.name }
+        </a>
       ))
     }
     <style jsx>{`
@@ -78,7 +76,7 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
   return {
     handleNav(index) {
-      if(index== 3 || index == 4) {
+      if( index== 3 || index == 4 ) {
         return ;
       }
       sessionStorage.setItem('navIndex',index);

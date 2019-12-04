@@ -16,6 +16,11 @@ const ARTICLE = {
   // 文章阅读量新增
   setArticleReaderNum(params = {}) {
     return postRequest(`${domain}/article/api/v1/article_reader_number`, params);
+  },
+
+  // 文章点赞
+  setArticleGoodNum(params = {}) {
+    return postRequest(`${domain}/article/api/v1/article_likes`, params);
   }
 
 }

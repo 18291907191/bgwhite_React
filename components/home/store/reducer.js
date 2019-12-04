@@ -26,10 +26,10 @@ const defaultState = {
     {cont:"React.js+Next.js搭建SSR博客系统",createTime:"03-16"}
   ],
   recentArticlesList: [
-    {title:"next+React搭建SSR博客系统"},
-    {title:"Nuxt+Vue搭建SSR博客系统"},
-    {title:"Linux服务器搭建"},
-    {title:"小程序引入多个e-Charts图标"},
+    {id: 1, title:"next+React搭建SSR博客系统"},
+    {id: 2, title:"Nuxt+Vue搭建SSR博客系统"},
+    {id: 3, title:"Linux服务器搭建"},
+    {id: 4, title:"小程序引入多个e-Charts图标"},
   ],
   aslideFixed: false,
 }

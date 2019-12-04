@@ -41,7 +41,7 @@ class Home extends Component {
 
 }
 
-Home.getInitialProps = async () => {
+Home.getInitialProps = async (context) => {
   const article = await getArticleList();
   return { article }
 }
