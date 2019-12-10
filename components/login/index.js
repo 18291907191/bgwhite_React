@@ -30,14 +30,14 @@ class Login extends Component {
   }
   // 登录
   handleSubmit = e => {
-    this.setState({
-      loading: true,
-    })
     e.preventDefault();
     this.props.form.validateFields(async (err, {username,password}) => {
       if(err) {
         return false;
       }
+      this.setState({
+        loading: true,
+      })
       const encryptPassword = await this.encrypt(password);
       try {
         $api.USER.login({account: username,password:encryptPassword})
@@ -92,10 +92,13 @@ class Login extends Component {
                 valuePropName: 'checked',
                 initialValue: true,
               })(<Checkbox>Remember me</Checkbox>)}
-              <a className="login-form-forgot">
+              <a>
                 Forgot password
               </a>
-              <Button type="primary" style={{'width': '100%'}} htmlType="submit" className="login-form-button">
+              <Button 
+                type="primary" 
+                style={{'width': '100%'}} 
+                htmlType="submit">
                 Log in
               </Button>
               <p>

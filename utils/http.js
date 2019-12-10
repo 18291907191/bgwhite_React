@@ -4,19 +4,19 @@ import Cookies from 'react-cookies';
 import  { message } from 'antd';
 
 // 请求拦截
-// Axios.interceptors.request.use(config => {
-//   // showFullScreenLoading();
-//   if(!Cookies.load('adminToken')) {
-//     return config;
-//   }
-//   const token = Cookies.load('adminToken');
-//   config.headers['Token'] = token;
-//   return config;
-// }, err => {
-//   // tryHideFullScreenLoading();
-//   message.error('请求超时');
-//   return Promise.resolve(err);
-// })
+Axios.interceptors.request.use(config => {
+  // showFullScreenLoading();
+  if(!Cookies.load('adminToken')) {
+    return config;
+  }
+  const token = Cookies.load('adminToken');
+  config.headers['Token'] = token;
+  return config;
+}, err => {
+  // tryHideFullScreenLoading();
+  message.error('请求超时');
+  return Promise.resolve(err);
+})
 
 // // 响应拦截
 // Axios.interceptors.response.use(res => {
